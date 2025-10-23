@@ -365,6 +365,10 @@ open class PhoneNumberTextField: UITextField, UITextFieldDelegate {
 
     @objc func didPressFlagButton() {
         guard withDefaultPickerUI else { return }
+       
+        //force resign with when tap on flag button.
+        self.resignFirstResponder()
+        
         let vc = CountryCodePickerViewController(utility: utility,
                                                  options: withDefaultPickerUIOptions)
         vc.delegate = self
